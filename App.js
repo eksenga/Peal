@@ -5,9 +5,15 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
+        <View style={styles.topHalf}>
+        </View>
+
+        <View style={styles.bottomHalf}>
+          <View style={styles.configSection}><Text style={styles.configText}>Peal</Text></View>
+          <View style={styles.configSection}><Text style={styles.configText}>From</Text></View>
+          <View style={styles.configSection}><Text style={styles.configText}>Till</Text></View>
+          <View style={styles.configSection}><Text style={styles.configText}>Using</Text></View>
+        </View>
       </View>
     );
   }
@@ -16,8 +22,29 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flexDirection: 'column',
+    backgroundColor: '#b2b2b2',
+    alignItems: 'flex-start',
+    justifyContent: 'space-between', 
+    paddingLeft: 10,
+  },
+
+  topHalf: {
+    flex: 0.7,
+  },
+  
+  bottomHalf: {
+    flex: 0.3,
+    flexDirection: 'column'
+  },
+
+  configSection: {
+    flex: 0.2,
+  },
+
+  configText: {
+    width: 200,
+    height: 30,
+    fontSize: 20,
   },
 });
